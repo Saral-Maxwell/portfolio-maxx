@@ -1,0 +1,144 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f0f0f0;
+}
+
+header {
+  background: #1e1e2f;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 20px;
+  background: white;
+  color: #f0f0f0;
+  min-height: 60vh;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #1e1e2f;
+  color: white;
+}
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #333;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+  display: none;
+}
+
+.htmx-request .loader {
+  display: block;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+.download-btn:hover {
+  background: #0056b3;
+}
+@media (max-width: 600px) {
+  header, footer {
+    text-align: center;
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  nav a {
+    margin: 10px 0;
+  }
+}
+/* ====== Contact Form Styles ====== */
+#form-status {
+  background: #ffffffdd;
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+#form-status h3 {
+  text-align: center;
+  color: #1e1e2f;
+  margin-bottom: 20px;
+}
+
+#form-status form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#form-status input,
+#form-status textarea {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  transition: border 0.3s;
+}
+
+#form-status input:focus,
+#form-status textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0,123,255,0.2);
+}
+
+#form-status textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+#form-status button {
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#form-status button:hover {
+  background: #0056b3;
+}
+#form-status .error {
+  color: red;
+  font-size: 14px;
+  margin-top: -10px;
+}

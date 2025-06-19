@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Max Portfolio</title>
+  <link rel="icon" href="logo.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+</head>
+
+<body>
+  <header>
+    <h1 id="typewriter"></h1>
+    <nav>
+      <a href="about.html" hx-get="about.html" hx-target="#main-content">About</a>
+      <a href="projects.html" hx-get="projects.html" hx-target="#main-content">Projects</a>
+      <a href="contact.html" hx-get="contact.html" hx-target="#main-content">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ✅ One main-content only -->
+  <main id="main-content"
+        hx-indicator="#loader"
+        style="background-image: url('portfolio.avif'); background-repeat: repeat; background-size: cover;">
+    <h2>Welcome to my portfolio</h2>
+    <p>Click the links above to learn more about me.</p>
+    
+    <!-- Loader shown during HTMX request -->
+    <div id="loader" class="loader" style="display: none;"></div>
+  </main>
+
+  <!-- Resume Download Button -->
+  <a href="SaralMaxwellResume.pdf" class="download-btn" download>📄 Download Resume</a>
+
+  <!-- Optional Contact Form can be HTMX-loaded separately -->
+  <!-- OR leave here if static -->
+  
+
+  <footer>
+    <p>&copy; 2025 Saral Maxwell</p>
+  </footer>
+
+  <!-- Typewriter JS -->
+  <script>
+    const text = "Greetings, I'm Saral Maxwell.";
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        document.getElementById("typewriter").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, 100);
+      }
+    }
+    type();
+  </script>
+</body>
+</html>
